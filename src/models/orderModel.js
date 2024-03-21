@@ -1,8 +1,8 @@
 const odoo = require('../connection/connection');
 
-class Product {
+class Order {
     // listar productos
-    getAllProducts(req, res) {
+    getClient(req, res) {
         odoo.connect(function (err) {
             if (err) { 
                 return res.json({ error: 'Error al conectar con el servidor Odoo' });
@@ -11,7 +11,7 @@ class Product {
             if (err) { 
                 return res.json({ error: 'Error al ejecutar la búsqueda en Odoo' });
             }
-            return res.status(200).send( value )
+            return res.status(200).send(value)
             });
         });
       }
